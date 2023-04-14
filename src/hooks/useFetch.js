@@ -4,26 +4,26 @@ import { useState } from "react"
 
 
 const useFetch = (url) => {
- 
+
     const [state, setState] = useState()
-// const [error, setError] = useState(false)
+    // const [error, setError] = useState(false)
     useEffect(() => {
 
         axios.get(url)
-        
 
-        .then(res => {
-            setState(res.data)
-        })
-        .catch(err => {
-            console.log(err)
-            // setError(true)
-        })
 
-        
+            .then(res => {
+                setState(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+                // setError(true)
+            })
+
+
     }, [url])
 
-    return state 
+    return state
 }
 
 export default useFetch

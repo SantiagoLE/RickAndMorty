@@ -13,13 +13,13 @@ function App() {
   const location = useFetch(url)
 
   const inputLocation = useRef()
-const handleSubmit = event => {
-  event.preventDefault()
-  //event.target.firstChild.value
-  //event.target."id".value
- setInputValue(inputLocation.current.value);
- inputLocation.current.value = ""
-}
+  const handleSubmit = event => {
+    event.preventDefault()
+    //event.target.firstChild.value
+    //event.target."id".value
+    setInputValue(inputLocation.current.value);
+    inputLocation.current.value = ""
+  }
   return (
 
     <div className="App">
