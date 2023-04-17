@@ -6,7 +6,7 @@ import { useState } from "react"
 const useFetch = (url) => {
 
     const [state, setState] = useState()
-    // const [error, setError] = useState(false)
+     const [error, setError] = useState(false)
     useEffect(() => {
 
         axios.get(url)
@@ -14,16 +14,17 @@ const useFetch = (url) => {
 
             .then(res => {
                 setState(res.data)
+                setError(false)
             })
             .catch(err => {
                 console.log(err)
-                // setError(true)
+                setError(true)
             })
 
 
     }, [url])
 
-    return state
+    return [state, error]
 }
 
 export default useFetch

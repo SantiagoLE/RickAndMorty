@@ -1,5 +1,9 @@
-const getRandomLocation = () => {
-    return Math.floor(Math.random() * 126 ) + 1
-}
+const getRandomLocation = (arr) => {
+    const indexRandom = Math.floor(Math.random() * arr.length) 
+     return arr[indexRandom]
+   }
 
 export default getRandomLocation
+
+
+
