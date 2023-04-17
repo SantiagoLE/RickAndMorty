@@ -6,7 +6,7 @@
 
 .app_title {
     margin: 0 0 4rem 0;
-    background-image: url(./backgrounds/background_rickandmorty.png);
+    background-image: url("./backgrounds/background_rickandmorty.png");
     background-position: center;
     background-repeat: no-repeat;
     height: 180px;

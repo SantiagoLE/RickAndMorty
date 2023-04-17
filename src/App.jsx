@@ -1,28 +1,24 @@
 import { useRef, useState, useEffect } from 'react';
 import './App.css'
-import LocationInfo from './components/LocationInfo';
-import ResidentCard from './components/ResidentCard';
-import useFetch from './hooks/useFetch'
 import getRandomLocation from './utils/getRandomLocation';
 import axios from 'axios';
 import FormAutocomplete from './components/FormAutocomplete';
 import MainContent from './components/MainContent';
+import allLocations from './utils/allLocations.json'
 
 
+let _allLocations = []
 
-let _allLocations = ["Monster", "Trunk World", "Earth (C-137)"]
-
-console.log({ _allLocations: _allLocations });
 
 function App() {
 
-
-
-  const [inputValue, setInputValue] = useState(_allLocations)
+  const [location, setLocation] = useState()
+  const [error, setError] = useState(false)
   const [pageUrlLocations, setPageUrlLocations] = useState(1)
-  const [locationSelectInList, setLocationSelectInList] = useState(getRandomLocation(_allLocations))
+  const [locationSelectInList, setLocationSelectInList] = useState(getRandomLocation(allLocations))
 
-  console.log(locationSelectInList);
+
+ 
 
 
   useEffect(() => {
@@ -40,11 +36,33 @@ function App() {
 
   }, [pageUrlLocations])
 
+  
+
+    
+  useEffect(() => {
+     if (locationSelectInList) 
+     
+     {
+      const url = `https://rickandmortyapi.com/api/location/?name=${locationSelectInList}`
+      axios.get(url)
+        .then(res => {
+          setLocation(res.data)
+    
+          setError(false)
+        })
+
+        .catch(err => {
+          console.log(err)
+          setError(true)
+        })
 
 
+     }
 
-  const url = `https://rickandmortyapi.com/api/location/?name=${locationSelectInList}`
-  const [location, error] = useFetch(url)
+
+  }, [locationSelectInList])
+
+
 
 
 
@@ -56,7 +74,6 @@ function App() {
 
   const locationSelect = (_location) => {
     setLocationSelectInList(_location)
-    console.log(_location);
   }
   return (
 

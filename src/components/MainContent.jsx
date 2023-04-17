@@ -4,7 +4,7 @@ import ResidentCard from './ResidentCard'
 import "./styles/mainContent.css"
 
 
-const MainContent = ({location}) => {
+const MainContent = ({ location}) => {
   return (
     <>
      <LocationInfo location={location} />

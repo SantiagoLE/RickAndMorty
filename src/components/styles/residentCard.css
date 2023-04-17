@@ -1,5 +1,5 @@
 .resident {
-    max-width: 350px;
+    max-width: 300px;
     border-radius: 1rem;
     overflow: hidden;
     background-color: #062226;    box-shadow: 1rem 1rem 2rem #0009;
@@ -13,6 +13,8 @@ transform: scale(1.05);
 .resident_header {
     position: relative;
 }
+
+
 
 .resident_status {
     background-color: #062226;
