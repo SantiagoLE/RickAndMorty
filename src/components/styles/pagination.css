@@ -1,0 +1,63 @@
+.is-disabled {
+    visibility: hidden;
+}
+
+.pagination-previous {
+    background-color: rgb(125, 199, 14);
+    min-width: 80px;
+    max-width: 150px;
+    margin: 0 auto;
+    border: none;
+}
+
+.pagination-next {
+    background-color: rgb(125, 199, 14);
+    min-width: 80px;
+    max-width: 150px;
+    margin: 0 auto;
+    border: none;
+}
+
+@media (min-width: 435px) {
+    .pagination-previous {
+        width: 100px;
+    }
+
+    .pagination-next {
+        width: 100px;
+    }
+}
+
+@media (min-width: 770px) {
+    .pagination-previous {
+        width: 80px;
+        margin-left: 10%;
+    }
+
+    .pagination-next {
+        width: 80px;
+        margin-right: 10%;
+    }
+}
+
+
+.pagination-list {
+    padding: 0 1rem 0 1rem;
+    
+}
+
+.pagination-link {
+    color: white;
+    transition: background-color 300ms, color 300ms;
+}
+
+.pagination-link:hover{
+    background-color:  rgb(125, 199, 14);
+    color: black;
+}
+
+.current {
+    background-color: rgb(125, 199, 14);
+    color: black;
+
+}

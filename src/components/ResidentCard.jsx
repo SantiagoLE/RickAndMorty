@@ -5,9 +5,13 @@ import "./styles/residentCard.css"
 
 const ResidentCard = ({ url }) => {
 
+    
+
+
     const [resident] = useFetch(url)
 
     return (
+        
         <article className='resident'>
             <header className='resident_header'>
                 <img className='resident_img' src={resident?.image} alt="" />
@@ -26,6 +30,7 @@ const ResidentCard = ({ url }) => {
                 </ul>
             </section>
         </article>
+        
     )
 }
 

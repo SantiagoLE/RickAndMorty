@@ -16,9 +16,9 @@ function App() {
   const [error, setError] = useState(false)
   const [pageUrlLocations, setPageUrlLocations] = useState(1)
   const [locationSelectInList, setLocationSelectInList] = useState(getRandomLocation(allLocations))
+  const [currentPage, setCurrentPage] = useState(1)
 
-
- 
+ console.log(currentPage);
 
 
   useEffect(() => {
@@ -85,6 +85,7 @@ function App() {
       <FormAutocomplete
         _allLocations={_allLocations}
         locationSelect={locationSelect}
+        setCurrentPage={setCurrentPage}
       />
       {
         error
@@ -92,6 +93,8 @@ function App() {
           : <MainContent
             location={location}
             locationSelectInList={locationSelectInList}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
           />
       }
 

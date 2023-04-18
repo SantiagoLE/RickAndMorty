@@ -21,7 +21,6 @@ transform: scale(1.05);
     position: absolute;
     top: 10%;
     width: 40%;
-    /* padding: 1rem; */
     border-radius: 0 1rem 1rem 0;
     display: flex;
     gap: 0.5rem;

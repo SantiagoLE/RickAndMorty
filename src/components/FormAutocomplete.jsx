@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Autosuggest from 'react-autosuggest';
 import "./styles/formAutocomplete.css"
 
-const FormAutocomplete = ({_allLocations, locationSelect}) => {
+const FormAutocomplete = ({_allLocations, locationSelect, setCurrentPage}) => {
 
   const [suggestions, setSuggestions] = useState([]);
   const [selectedValue, setSelectedValue] = useState('');
@@ -30,6 +30,7 @@ const FormAutocomplete = ({_allLocations, locationSelect}) => {
     event.preventDefault();
     locationSelect(selectedValue)
     setSelectedValue('');
+    setCurrentPage(1)
   };
   return (
     <form className='form' onSubmit={handleSubmit}>
